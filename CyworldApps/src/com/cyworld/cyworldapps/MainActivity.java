@@ -1,9 +1,12 @@
 package com.cyworld.cyworldapps;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 public class MainActivity extends Activity {
 
@@ -11,6 +14,18 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		ListView listview = (ListView)findViewById(R.id.roomList);
+		ArrayList<String> list = new ArrayList<String>();
+		RoomListAdapter roomAdapter = new RoomListAdapter(MainActivity.this);
+
+		//testData いらなくなったら消す
+		list.add("RoomName");
+		list.add("RoomName");
+		list.add("RoomName");
+
+		roomAdapter.setList(list);
+		listview.setAdapter(roomAdapter);
 	}
 
 	@Override

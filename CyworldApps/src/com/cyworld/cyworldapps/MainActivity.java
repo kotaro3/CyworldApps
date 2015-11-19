@@ -19,19 +19,19 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		ListView listview = (ListView)findViewById(android.R.id.list);
-		List<String> list = new ArrayList<>();
+		ListView listview = (ListView)findViewById(R.id.list);
+		ArrayList<String> list = new ArrayList<String>();
         Log.d("list","挿入");
 
 
-//		//testData いらなくなったら消す
+		//testData いらなくなったら消す
 		list.add("a");
 		list.add("b");
 		list.add("c");
 
-//        String[] list = {"aaa"};
+//		String[] list = {"aaa"};
 
-        RoomListAdapter adapter = new RoomListAdapter(MainActivity.this,list);
+        RoomListAdapter adapter = new RoomListAdapter(this,0,list);
         Log.d("list","set");
 //		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,list);
 		listview.setAdapter(adapter);
